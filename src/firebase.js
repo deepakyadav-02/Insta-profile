@@ -1,7 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyAjIbtYpRxZWcUv4SGk9rKnHTd4YoUDTts",
   authDomain: "insta-profile-bdad1.firebaseapp.com",
   projectId: "insta-profile-bdad1",
@@ -10,7 +10,7 @@ var firebaseConfig = {
   appId: "1:140018833709:web:cd04e22f964c7a00d99ba4",
 };
 
-firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-const instagramAuthProvider = new firebase.auth.InstagramAuthProvider();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export default app;
