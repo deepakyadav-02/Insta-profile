@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signOut,
-  GoogleAuthProvider,
+  FacebookAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../firebase";
@@ -15,9 +15,9 @@ export function UserAuthContextProvider({ children }) {
   function logOut() {
     return signOut(auth);
   }
-  function googleSignIn() {
-    const googleAuthProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleAuthProvider);
+  function facebookSignIn() {
+    const facebookAuthProvider = new FacebookAuthProvider();
+    return signInWithPopup(auth, facebookAuthProvider);
   }
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   return (
-    <userAuthContext.Provider value={{ user, logOut, googleSignIn }}>
+    <userAuthContext.Provider value={{ user, logOut, facebookSignIn }}>
       {children}
     </userAuthContext.Provider>
   );
