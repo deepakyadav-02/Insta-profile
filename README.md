@@ -1,5 +1,3 @@
-<h1>Unfortunately, Instagram has discontinued the Login authentication feature and they are forcing everyone to use Facebook authentication. They are already merged with the FB API.</h1>
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
